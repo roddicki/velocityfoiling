@@ -28,11 +28,59 @@
       padding: 2rem 0;
       flex: 1;
     }
+
     .col-content {
-      background-color: rgba(255, 255, 255, 0.1);
+      position: relative;
       padding: 1.5rem;
+      padding-top: 17rem;
       border-radius: 10px;
+      z-index: 2;
     }
+
+    .bg-fade-taster {
+      background-image: url('img/winging1.webp');
+    }
+
+    .bg-fade-clinic {
+      background-image: url('img/gybe-1.jpg');
+    }
+
+    .bg-fade-container {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      overflow: hidden;
+      /*padding: 10px;*/
+    }
+
+
+
+    .bg-fade-container::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 40px;
+      background: linear-gradient(to top, #5342e1, rgba(0,0,0,0));
+      z-index: 1;
+    }
+
+    .bg-fade-content {
+      position: relative;
+      z-index: 2;
+      /*padding: 3rem;*/
+    }
+
+    h2 {
+      text-transform: uppercase;
+    }
+
+    .btn {
+      color: #312783;
+    }
+
     footer {
       background-color: rgba(0, 0, 0, 0.2);
       text-align: center;
@@ -67,23 +115,28 @@
 
   <!-- Content -->
   <div class="container content">
-    <div class="row g-3">
-      <div class="col-md-6 mb-3">
-        <div class="col-content">
-          <h2>BCYC Fin and Foil Taster Sessions</h2>
-          <p>Grab a ticket for one of our taster sessions.</p>
-          <p>We'll show the basics of how to use a wing on your first steps to wing foiling in this one hour session.</p>
-          <p>The sessions will run at 1pm and 3pm wind allowing, for 6 people.</p>
-          <p><a type="button" class="btn btn-light">Book now</a></p>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="bg-fade-container bg-fade-taster">
+          <div class="col-content ">
+            <h2>BCYC Fin and Foil Taster Sessions</h2>
+            <p>Grab a ticket for one of our taster sessions.</p>
+            <p>We'll show the basics of how to use a wing on your first steps to wing foiling in this one hour session.</p>
+            <p>The sessions will run at 1pm and 3pm wind allowing, for 6 people.</p>
+            <p><a type="button" class="btn btn-light">Book now</a></p>
+          </div>
+          
         </div>
       </div>
-      <div class="col-md-6 mb-3">
-        <div class="col-content">
-          <h2>BCYC Fin and Foil Advanced Clinics</h2>
-          <p>Grab a ticket for one of our clinics.</p>
-          <p>This one hour clinic will focus on some key foil gybing techniques and how to efficiently pump up on foil.</p>
-          <p>The clinics will run at 1pm and 3pm wind allowing, for 6 people.</p>
-          <p><a type="button" class="btn btn-light">Book now</a></p>
+      <div class="col-md-6">
+        <div class="bg-fade-container bg-fade-clinic">
+          <div class="col-content">
+            <h2>BCYC Fin and Foil Advanced Clinics</h2>
+            <p>Grab a ticket for one of our clinics.</p>
+            <p>This one hour clinic will focus on some key foil gybing techniques and how to efficiently pump up on foil.</p>
+            <p>The clinics will run at 1pm and 3pm wind allowing, for 6 people.</p>
+            <p><a type="button" class="btn btn-light" data-cal-link="velocity-foiling-jchg0w/fin-and-foil-intro-to-gybing-and-intermediate-foiling" data-cal-namespace="fin-and-foil-intro-to-gybing-and-intermediate-foiling" data-cal-config='{"layout":"month_view","theme":"dark"}'>Book now</a></p>
+          </div>
         </div>
       </div>
     </div>
@@ -96,5 +149,21 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Cal element-click embed code begins -->
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "fin-and-foil-intro-to-gybing-and-intermediate-foiling", {origin:"https://cal.com"});
+
+  
+  // Important: Please add the following attributes to the element that should trigger the calendar to open upon clicking.
+  // `data-cal-link="velocity-foiling-jchg0w/fin-and-foil-intro-to-gybing-and-intermediate-foiling"`
+  // data-cal-namespace="fin-and-foil-intro-to-gybing-and-intermediate-foiling"
+  // `data-cal-config='{"layout":"month_view","theme":"dark"}'`
+
+  Cal.ns["fin-and-foil-intro-to-gybing-and-intermediate-foiling"]("ui", {"theme":"dark","cssVarsPerTheme":{"dark":{"cal-brand":"#5462d6"}},"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+  <!-- Cal element-click embed code ends -->
+
 </body>
 </html>
