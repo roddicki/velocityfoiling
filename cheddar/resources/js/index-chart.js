@@ -16,7 +16,7 @@ function getWindData(callback){
 	// 	result.push(null);
 	// };
 	//get json file
-	$.getJSON('https://roddickinson.net/cheddar/cron/wind-history.json', function(data, status){
+	$.getJSON('https://roddickinson.net/cheddar/cron/serve-wind-history.php', function(data, status){
 			var history = data.windHistory;
 			var maxWind = 0;
 			var maxHr = 0;
