@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>BCYC Live Wind</title>
+    <script>
+        // Check if the screen width is larger than 768px (common mobile breakpoint)
+        if (window.innerWidth > 768) {
+            // Redirect to another page (e.g., desktop.html)
+            window.location.href = "desktop.html";
+        }
+    </script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LJQ0KVWZE2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LJQ0KVWZE2');
+  </script>
+  
+  <title>Cheddar Reservoir Live Wind</title>
+  <!-- CONFIGURATION -->
+    <link rel="manifest" href="cheddar.webmanifest">
+    <link rel="icon" sizes="192x192" href="cheddar-logo.png">
+    
+    <!-- Allow web app to be run in full-screen mode. -->
+    <meta name="apple-mobile-web-app-capable"
+          content="yes">
+
+    <!-- Make the app title different than the page title. -->
+    <meta name="apple-mobile-web-app-title"
+          content="St Athan Wind">
+
+    <!-- Configure the status bar. -->
+    <meta name="apple-mobile-web-app-status-bar-style"
+          content="black">
+
+    <!-- Set the viewport. -->
+    <meta name="viewport"
+          content="initial-scale=1">
+
+    <!-- Disable automatic phone number detection. -->
+    <meta name="format-detection"
+          content="telephone=no">
+
+    <!-- STARTUP IMAGES -->
+    
+    <!-- iPhone Xs Max (1242px x 2688px) --> 
+    <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" href="resources/img/startup-iphonexs.png"> 
+
+    <!-- iPhone Xr (828px x 1792px) --> 
+    <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" href="resources/img/startup-iphonexr.png"> 
+
+    <!-- iPhone x portrait startup image -->
+    <link href="resources/img/startup-iphonex.png"
+          media="(device-width: 375px) and (device-height: 812px)
+                 and (-webkit-device-pixel-ratio: 3)
+                 and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPhone 6 Plus portrait startup image -->
+    <link href="resources/img/startup-iphone6plus.png"
+          media="(device-width: 414px) and (device-height: 736px)
+                 and (-webkit-device-pixel-ratio: 3)
+                 and (orientation: portrait)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPhone 6 startup image -->
+    <link href="resources/img/startup-iphone6.png"
+          media="(device-width: 375px) and (device-height: 667px)
+                 and (-webkit-device-pixel-ratio: 2)"
+          rel="apple-touch-startup-image">
+
+    <!-- iPhone 5 startup image -->
+    <link href="resources/img/startup-iphone5.png"
+          media="(device-width: 320px) and (device-height: 568px)
+                 and (-webkit-device-pixel-ratio: 2)"
+          rel="apple-touch-startup-image">
+
+
+    <!-- ICONS -->
+    <link rel="apple-touch-icon" href="cheddar-logo.png"/>
+    <link rel="apple-touch-icon-precomposed" href="cheddar-logo.png"/>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="resources/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="resources/css/styles.css"/>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+
+        
+    </style>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="resources/slick/slick.min.js"></script>
+</head>
+<body class="page__content page__background">
+
+<!-- Pull-to-Refresh Spinner -->
+<div class="refresh-container" id="refreshContainer">
+    <div class="spinner-border text-dark" role="status"></div>
+</div>
+
+<!-- fixed title -->
+<div class="text-center title" id="titleblock">
+    <span>BCYC Live Wind</span><br>
+    <!-- delete content -->
+    <span class="subtitle" id="now"><!-- Conditions on: Thu Mar 20 2025 21:12 --></span>
+</div>
+
+<!-- fixed footer -->
+<div class="text-center footer">
+    <div class="container">
+        <!-- <i class="bi bi-chevron-down" style="font-size: 40px;"></i> -->  <!-- Bootstrap down arrow -->
+        <!-- delete content -->
+        <div id="update"><!-- Updated 1 min ago --></div>
+    </div>
+</div>
+
+<!-- fixed chevron -->
+<i class="bi bi-chevron-down" style="font-size: 30px;"></i>  <!-- Bootstrap down arrow -->
+
+
+<!-- slider -->
+<div class="screens-container wind-bg-image">
+
+  <div class="screen screen-relative">
+    <div class="container live-wind-slide">
+        <div class="row">
+            <div class="col">
+                <!-- delete content -->
+              <div class="temp" id="tempblock"><!-- 14°C --></div>
+            </div>
+            <div class="col-3">
+                <!-- delete content -->
+              <div class="direction" id="bearing"></div>
+            </div>
+            <div class="col">
+                <!-- delete content -->
+              <div class="weather" id="weather-icon"></div>
+            </div>
+        </div>
+    </div>
+    <!-- compass -->
+    <div class="container centered background-container">
+        <!-- centered wind speed -->
+        <div class="d-flex" id="speed">
+            <span id="value" style="font-family: Helvetica, Arial, sans-serif !important"><!-- 12 --></span>
+            <span id="units"><!-- kts --></span> 
+        </div>
+        <!-- compass block -->
+        <div class="row">
+            <div class="col">
+                <div id="gust"><!-- Highest gust 21 knots at 13:07 --></div>
+                <div class="background-layer bg-image-1"></div>
+                <div class="background-layer bg-image-2" id="arrow"></div>
+                
+                <div class="ave-wind-container">
+                    <!-- <div class="row">
+                        <div class="col ten-min-ave">Ten min ave</div>
+                    </div> -->
+                    <div class="row">
+                        <div class="col text-end" id="lo-wind">
+                            <span></span> <span class="small">Kts<span>
+                        </div>
+                        <div class="middle" id="ave-wind">
+                            <span></span> <span class="small">Kts<span>
+                        </div>
+                        <div class="col text-start" id="hi-wind">
+                            <span></span> <span class="small">Kts<span>
+                        </div>
+                    </div>
+                    <div class="row lh-half">
+                        <div class="col text-end">
+                            <span class="small">Low<span>
+                        </div>
+                        <div class="middle">
+                            <span class="small">10 min Avg<span>
+                        </div>
+                        <div class="col text-start">
+                            <span class="small">Max<span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+  </div>
+
+  <div class="screen">
+      <div class="wind-chart wind-history-slide">
+        <div>Wind Report (Knots) <span class="gust-text">Gust</span> / <span class="ave-text">Average</span></div>
+        <canvas id="windChart" width="800" ></canvas>
+      </div>
+  </div>
+
+  <div class="screen">
+    <div class="avatar-container">
+        <p id="avatar-caption">13 knots</p>
+        <div class="background-image"></div>
+        <p id="wind-caption"></p>
+
+        <!-- Bottom Banner -->
+        <div class="banner-wrapper">
+            <div class="bottom-banner">
+                <!-- Centered Text on the Left -->
+                <div class="banner-text">
+                    <p>Help to support this app, wake up with your coffee in a Beaufort Scale Wingfoil mug (I can drop off at the reservoir, or post)</p>
+                    <a type="button" class="btn btn-outline-dark btn-sm" href="https://www.ebay.co.uk/itm/365669072566" target="_blank">More</a>
+                </div>
+                
+                <!-- Right-Aligned Image -->
+                <div>
+                    <img src="resources/img/mug-sml.jpg" alt="Beaufort wind mug" class="banner-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Fullscreen Modal -->
+<div class="modal show fade-out" id="fullscreenModal" tabindex="-1" style="display: block;">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body invisible">
+                <p id="modal-avatar-caption">13 knots</p>
+                <div class="background-image"></div>
+                <p id="modal-wind-caption"></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fullscreen Modal -->
+
+<!-- create wind history chart -->
+<script src='resources/js/chart.min.js'></script>
+<script src='resources/js/chartjs-plugin-annotation.js'></script>
+<script  src="resources/js/index-chart.js"></script>
+
+<!-- live wind -->
+<script  src="resources/js/index.js"></script>
+
+<!-- weather -->
+<script  src="resources/js/weather.js"></script>
+
+<!-- pull to refresh -->
+<script  src="resources/js/refresh.js"></script>
+
+<!-- https://kenwheeler.github.io/slick/ -->
+<script type="text/javascript">
+    $(document).ready(function(){
+      $('.screens-container').slick({
+        //setting-name: setting-value
+        vertical: true,
+        verticalSwiping: true,
+        arrows: false,
+        slidesToShow: 1,
+        infinite: false, // Stop at the last slide
+        swipeToSlide: true,
+        touchThreshold: 10, // Improves swipe responsiveness
+        //slidesToScroll: -1,
+      });
+    });
+  </script>
+
+</body>
+</html>

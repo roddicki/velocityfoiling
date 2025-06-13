@@ -1,0 +1,365 @@
+ 
+
+.screens-container{
+    height: 100vh;
+}
+
+.slick-vertical .slick-slide {
+    display: block;
+    height: 100vh;
+}
+
+.page__background{
+	background-color: #dedede !important;
+}
+
+.page__content {
+	font-family: Helvetica, Arial, sans-serif !important;
+}
+
+
+.wind-bg-image {
+	background: url('../img/bgimg.png') !important;
+    background-repeat: no-repeat !important;
+    background-size: auto 100% !important;
+}
+
+.title {
+	position: fixed;
+	width: 100%;
+	left: 20px;
+	top: 0px;
+	padding-right: 40px;
+	padding-top: 10px;
+	font-size: 18px;
+	z-index: 100;
+}
+
+
+
+.subtitle {
+	position: relative;
+	top: -5px;
+	font-size:14px;
+}
+
+.live-wind-slide {
+	margin-top: 60px;
+}
+
+.temp {
+	position: relative;
+	left: 40px;
+	/*background-color: #F1FB6E;*/ /*delete*/
+	border-radius: 31px;
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	font-weight: 500;
+	font-size: 18px;
+	text-align: center;
+	margin: auto;
+	margin-top: 10px;
+}
+
+.weather {
+	position: relative;
+	left: -40px;
+	background-color: rgba(0, 0, 0, 0.1); 
+	border-radius: 31px;
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	font-weight: 500;
+	text-align: center;
+	margin: auto;
+	margin-top: 10px;
+}
+
+#weather-icon{
+	/*background-image: url('../img/broken-clouds.png');*/
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+
+.direction {
+	position: relative;
+	left: 0px;
+	background-color: rgba(0, 0, 0, 0.1); 
+	border-radius: 31px;
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	font-weight: 500;
+	font-size: 18px;
+	text-align: center;
+	margin: auto;
+	margin-top: 10px;
+}
+
+.screen-relative {
+	position: relative;
+	z-index: 100;
+}
+
+/*compass block*/
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100vw;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    /*background-color: white;*/
+}
+
+.background-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-image-1 {
+    background-image: url('../img/compass-outline.png'); 
+    background-size: auto 80% !important;
+    background-repeat: no-repeat;
+}
+
+.bg-image-2 {
+    background-image: url('../img/compass-outline-arrow.svg'); 
+    background-size: auto 69.5% !important;
+    background-repeat: no-repeat;
+    transition: transform 4s ease-in-out;
+}
+
+#speed {
+	position: absolute;
+    top: 50%;
+    left: 52%;
+    width: 200px; /* Set a width for the block */
+    height: 200px; /* Set a height for the block */
+    transform: translate(-47%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    font-size: 80px;
+    font-weight: 400;
+    line-height: 200px;
+}
+
+
+#units {
+	font-size: 20px;
+}
+
+/*average wind block*/
+.ave-wind-container {
+	position: absolute;
+	bottom: -60px;
+	right:0;
+	width: 100%;
+}
+
+.ten-min-ave {
+	line-height: 5px;
+}
+
+.ave-wind-container .middle {
+	width: 90px;
+}
+
+.ave-wind-container span {
+	/*font-weight: 600;*/
+	font-size: 32px;
+}
+
+.ave-wind-container span.small {
+	font-size: 12px;
+	font-weight: 400;
+}
+
+.ave-wind-container .lh-half {
+	position: relative;
+	top: -25px;
+}
+
+.ave-wind-container .lh-half .text-end .small {
+	padding-right: 15px;
+}
+
+.ave-wind-container .lh-half .text-start .small {
+	padding-left: 15px;
+}
+
+/*footer styles*/
+.footer {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	font-size: 14px;
+	z-index: 100;
+}
+
+.footer #update {
+	padding-bottom: 10px;
+}
+
+.bi-chevron-down {
+	position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+
+
+/*wind history chart*/
+.wind-history-slide {
+	margin-top: 95px;
+}
+
+.wind-chart {
+	width: 100%;
+	text-align:center;
+	font-size:14px;
+}
+
+/*canvas styles for chart*/
+#windChart{
+	width: 80% !important;
+	height: auto !important;
+	margin: auto;
+	
+}
+
+.gust-text{
+	color: rgb(255, 0, 0);
+}
+
+.ave-text{
+	color: rgb(0, 0, 50);
+}
+
+/*avatar / mug slide*/
+.avatar-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 20px;
+}
+
+.banner-wrapper {
+    /*position: absolute;*/
+    width: 100%; 
+    /*bottom: 70px;*/
+}
+
+.bottom-banner {
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.banner-text {
+    flex: 1;
+    text-align: center;
+    font-size: 12px;
+    padding: 5px;
+}
+
+.banner-image {
+    width: auto;
+    height: 111px;
+}
+
+/*modal*/
+.modal-fullscreen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 1); 
+    border: none;
+}
+
+.modal-header {
+    border-bottom-width: 0;
+}
+
+.modal-body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 20px;
+}
+
+.background-image {
+    width: 200px; /* Adjust image size */
+    height: 200px;
+    /*background-image: url('../img/cup-no-wind.svg');*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 20px;
+}
+
+.fade-out {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade-out.hide {
+    opacity: 0;
+}
+
+/*pull to refresh - spinner and container
+*/body {
+    overflow: hidden;
+    touch-action: pan-y;
+}
+
+.refresh-container {
+    position: fixed;
+    top: -60px; /* Hidden initially */
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: top 0.3s ease-out;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 110;
+}
+
+.spinner-border {
+    width: 30px;
+    height: 30px;
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+{
+    "name": "Cheddar BCYC Live Wind",
+    "short_name": "Cheddar Wind",
+    "description": "Live Wind for BCYC, UK",
+    "icons": [
+        {
+            "src": "cheddar-logo.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "img/cheddar-logo.png",
+            "sizes": "57x57",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "index.html",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#ffffff",
+    "orientation": "portrait"
+}
