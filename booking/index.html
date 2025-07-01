@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <style>
+    .quill-editor {
+      height: 150px;
+    }
+  </style>
+</head>
+<body class="p-4">
+
+  <div class="container">
+    <h2>Event Booking Form</h2>
+    <form id="bookingForm">
+      <div id="dateTimeContainer">
+        <div class="row mb-3 dateTimeGroup">
+          <div class="col-md-5">
+            <label class="form-label">Date</label>
+            <input type="date" name="date[]" class="form-control" required>
+          </div>
+          <div class="col-md-5">
+            <label class="form-label">Time</label>
+            <input type="time" name="time[]" class="form-control" required>
+          </div>
+          <div class="col-md-2 d-flex align-items-end">
+            <button type="button" class="btn btn-outline-primary addDateTimeBtn">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Event Description</label>
+        <div id="editor" class="form-control quill-editor"></div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Number of Participants</label>
+        <input type="number" name="participants" class="form-control" min="1" required>
+      </div>
+
+      <div class="form-check form-switch mb-3">
+        <input class="form-check-input" type="checkbox" id="toggleSwitch">
+        <label class="form-check-label" for="toggleSwitch">Show/Hide Details</label>
+      </div>
+
+      <div id="detailsSection" style="display: none;">
+        <p class="text-muted">Additional information or settings can go here.</p>
+      </div>
+
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div>
+
+  <!-- Bootstrap & Quill -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+  
+  <script>
+    const quill = new Quill('#editor', {
+      theme: 'snow'
+    });
+
+    document.querySelector('.addDateTimeBtn').addEventListener('click', () => {
+      const container = document.getElementById('dateTimeContainer');
+      const newGroup = document.createElement('div');
+      newGroup.className = 'row mb-3 dateTimeGroup';
+      newGroup.innerHTML = `
+        <div class="col-md-5">
+          <input type="date" name="date[]" class="form-control" required>
+        </div>
+        <div class="col-md-5">
+          <input type="time" name="time[]" class="form-control" required>
+        </div>
+        <div class="col-md-2 d-flex align-items-end">
+          <button type="button" class="btn btn-outline-danger removeDateTimeBtn">−</button>
+        </div>
+      `;
+      container.appendChild(newGroup);
+    });
+
+    document.getElementById('dateTimeContainer').addEventListener('click', function(e) {
+      if (e.target.classList.contains('removeDateTimeBtn')) {
+        e.target.closest('.dateTimeGroup').remove();
+      }
+    });
+
+    document.getElementById('toggleSwitch').addEventListener('change', function () {
+      const section = document.getElementById('detailsSection');
+      section.style.display = this.checked ? 'block' : 'none';
+    });
+
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const dates = [...form.querySelectorAll('input[name="date[]"]')].map(el => el.value);
+      const times = [...form.querySelectorAll('input[name="time[]"]')].map(el => el.value);
+      const description = quill.root.innerHTML;
+      const participants = form.participants.value;
+      const showDetails = document.getElementById('toggleSwitch').checked;
+
+      const payload = {
+        dates,
+        times,
+        description,
+        participants,
+        showDetails
+      };
+
+      fetch('https://script.google.com/macros/s/AKfycbwt0GkLOgWrIrRkHBJ2QWtysJK1ieaC-BMZNVtNZp6ZgDoZWtTuyMz4CrSJUpaTWbY/exec', {
+        method: 'POST',
+        body: JSON.stringify(payload),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(res => res.text())
+      .then(response => alert("Submitted Successfully"))
+      .catch(err => alert("Submission Failed: " + err));
+    });
+  </script>
+
+</body>
+</html>
